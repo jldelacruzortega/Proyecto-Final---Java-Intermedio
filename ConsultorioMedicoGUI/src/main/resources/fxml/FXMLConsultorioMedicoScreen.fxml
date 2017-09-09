@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane id="AnchorPane" fx:id="CargarPaciente" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.itla.consultoriomedicogui.Controller.FXMLConsultorioMedicoScreenController">
+    <stylesheets>
+        <URL value="@/styles/fxmlconsultoriomedicoscreen.css" />
+    </stylesheets>
+   <children>
+      <BorderPane prefHeight="400.0" prefWidth="831.0" />
+       <VBox>
+      <children>
+         <BorderPane fx:id="mainLayout" prefHeight="22.0" prefWidth="600.0" />
+      </children>
+       </VBox>
+      <MenuBar layoutX="10.0" layoutY="10.0" prefHeight="25.0" prefWidth="599.0">
+         <menus>
+            <Menu mnemonicParsing="false" text="Archivo">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="Close" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Mantenimiento">
+               <items>
+                  <Menu mnemonicParsing="false" text="Paciente">
+                     <items>
+                        <MenuItem mnemonicParsing="false" onAction="#CargarPaciente" text="Agregar paciente" />
+                     </items>
+                  </Menu>
+                  <Menu mnemonicParsing="false" onAction="#CargarMedico" text="Medico">
+                     <items>
+                        <MenuItem mnemonicParsing="false" onAction="#CargarMedico" text="Agregar Medico" />
+                     </items>
+                  </Menu>
+                  <Menu mnemonicParsing="false" text="Procedimiento">
+                     <items>
+                        <MenuItem mnemonicParsing="false" onAction="#CargarProcedimiento" text="Agregar procedimiento" />
+                     </items>
+                  </Menu>
+                  <Menu mnemonicParsing="false" text="Cita">
+                     <items>
+                        <MenuItem mnemonicParsing="false" onAction="#CargarCita" text="Agregar cita" />
+                     </items>
+                  </Menu>
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Help">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="About" />
+               </items>
+            </Menu>
+         </menus>
+      </MenuBar>
+      <VBox prefHeight="200.0" prefWidth="100.0" />
+   </children>
+</AnchorPane>

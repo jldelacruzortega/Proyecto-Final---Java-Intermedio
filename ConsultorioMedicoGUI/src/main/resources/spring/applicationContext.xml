@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+
+    <import resource="persistenceContext.xml"/>
+    
+    <!--REPOSITORY BEAN-->
+    <bean id="medicoRepository" 
+          class="com.itla.registrobusiness.repository.impl.MedicoRepositoryImpl">
+          <constructor-arg index="0" ref="sessionFactory"/> 
+    </bean>
+    
+    <bean id="citaRepository" class="com.itla.registrobusiness.repository.impl.CitaRepositoryImpl">
+        <constructor-arg index="0" ref="sessionFactory"/>
+    </bean>
+    
+    <bean id="pacienteRepository" class="com.itla.registrobusiness.repository.impl.PacienteRepositoryImpl">
+        <constructor-arg index="0" ref="sessionFactory"/>
+    </bean>
+    
+    <bean id="procedimientoRepository" class="com.itla.registrobusiness.repository.impl.ProcedimientoRepositoryImpl">
+        <constructor-arg index="0" ref="sessionFactory"/>
+    </bean>
+    
+    <bean id="horarioRepository" class="com.itla.registrobusiness.repository.impl.HorarioRepositoryImpl">
+        <constructor-arg index="0" ref="sessionFactory"/>
+    </bean>
+
+
+    <!--SERVICE BEANS-->
+    <bean id="medicoService" class="com.itla.registrobusiness.services.impl.MedicoServiceImpl">
+         <constructor-arg index="0" ref="profesorRepository"/>           
+    </bean>
+    
+    <bean id="citaService" class="com.itla.registrobusiness.services.impl.CitaServiceImpl">
+         <constructor-arg index="0" ref="sessionRepository"/>           
+    </bean>
+    
+    <bean id="pacienteService" class="com.itla.registrobusiness.services.impl.PacienteServiceImpl">
+         <constructor-arg index="0" ref="aulaRepository"/>           
+    </bean>
+    
+    <bean id="procedimientoService" class="com.itla.registrobusiness.services.impl.ProcedimientoServiceImpl">
+         <constructor-arg index="0" ref="materiaRepository"/>           
+    </bean>
+    
+    <bean id="horarioService" class="com.itla.registrobusiness.services.impl.HorarioServiceImpl">
+         <constructor-arg index="0" ref="horarioRepository"/>           
+    </bean>
+
+
+</beans>
+
